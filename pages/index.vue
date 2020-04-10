@@ -25,7 +25,7 @@
         <div class="flex w-full bg-gray-300 p-3">
           <div class="flex w-full justify-between">
             <div class="flex w-full">
-              <span>Informasi Pembayaran</span>
+              <span>Untuk masuk aplikasi, klik tombol x di samping ---></span>
             </div>
             <button @click="showModal = false"
                     class="focus:outline-none">
