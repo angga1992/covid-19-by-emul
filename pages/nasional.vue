@@ -2,26 +2,25 @@
   <div class="flex w-full h-full min-h-screen">
     <div class="flex flex-col w-full h-full px-4">
       <div class="flex flex-col w-full mt-5 mb-10 justify-center items-center">
-        <div v-for="(prov, index) in gettingObj"
-             :key="index+'prov'">
-          <h3 v-if="prov['attributes']['FID'] === selected">Provinsi {{prov['attributes']['Provinsi']}}</h3>
-        </div>
-          <span class="text-xs text-gray-700">per {{currendate | dateFormat('noTime')}}</span>
+    
+        <h3>Seluruh Indonesia</h3>
+        <span class="text-xs text-gray-700">per {{currendate | dateFormat('noTime')}}</span>
+
         <no-ssr>
           <Chartjs :selected="selected" />
         </no-ssr>
         <span class="text-xs text-gray-600 italic">sumber: https://bnpb-inacovid19.hub.arcgis.com/</span>
       </div>
-      <div class="flex w-full bg-white rounded border border-gray-300 appearance-none my-1 leading-tight py-2 pl-2">
+      <!-- <div class="flex w-full bg-white rounded border border-gray-300 appearance-none my-1 leading-tight py-2 pl-2">
         <SelectOption class="flex w-full text-gray-700"
                       :items="gettingObj"
                       @change="val => selected = val['attributes']['FID']"
                       v-model="selected" />
-      </div>
+      </div> -->
 
       <table class="table-auto mb-24 text-xs">
         <thead>
-          <tr>
+          <tr class="text-center">
             <th class="py-2">Provinsi</th>
             <th class="px-1 py-2">Positif</th>
             <th class="px-1 py-2">Sembuh</th>
@@ -31,7 +30,6 @@
         <tbody>
           <tr v-for="(datTable, idx) in gettingObj"
               :key="idx+'table'"
-              v-show="datTable['attributes']['FID'] === selected"
               class="text-center">
             <td class="border px-4 py-2">{{datTable['attributes']['Provinsi']}}</td>
             <td class="border py-2">{{datTable['attributes']['Kasus_Posi']}}</td>
@@ -51,7 +49,7 @@
 <script>
 import menuBottom from '@/components/menuBottom'
 import SelectOption from '@/components/SelectOption'
-import Chartjs from "@/components/sample";
+import Chartjs from "@/components/sample"
 
 import Close from '@/assets/svg/close.svg'
 

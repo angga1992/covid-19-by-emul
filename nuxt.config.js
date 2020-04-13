@@ -29,6 +29,7 @@ export default {
   */
   plugins: [
     { src: '@/plugins/apexchart.js', ssr: false },
+    '~/plugins/dateFormatter',
   ],
   /*
   ** Nuxt.js dev-modules

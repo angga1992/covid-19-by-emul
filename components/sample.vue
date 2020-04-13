@@ -1,12 +1,11 @@
 <template>
   <div class="flex flex-col w-full justify-center items-center">
-    <h3>Data Pantauan Covid-19 seluruh provinsi indonesia</h3>
     <apexchart 
-        width="400"
+        width="450"
         height="300"
         type="donut"
         :options="chartOptions"
-        :series="series"
+        :series="shapeChart"
     >
     </apexchart>
   </div>
@@ -23,23 +22,23 @@ export default {
   data: function () {
     return {
       chartOptions: {
+        chart: {
+          width: 500,
+          type: 'pie',
+        },
+        labels: ['Positif', 'Sembuh', 'Meninggal'],
+        responsive: [{
+          breakpoint: 480,
+          options: {
             chart: {
-              width: 500,
-              type: 'pie',
+              width: 200
             },
-            labels: ['Positif', 'Sembuh', 'Meninggal'],
-            responsive: [{
-              breakpoint: 480,
-              options: {
-                chart: {
-                  width: 200
-                },
-                legend: {
-                  position: 'bottom'
-                }
-              }
-            }]
-          },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+      },
     }
   },
   computed: {
@@ -61,12 +60,59 @@ export default {
     },
     series() {
       let temp = []
-      for (let i in this.selectData) {
-        temp.push(this.selectData[i]['Kasus_Posi'], this.selectData[i]['Kasus_Semb'], this.selectData[i]['Kasus_Meni'])
+      if (this.selected !== '') {
+        for (let i in this.selectData) {
+          temp.push(this.selectData[i]['Kasus_Posi'], this.selectData[i]['Kasus_Semb'], this.selectData[i]['Kasus_Meni'])
 
+        }
+        return temp
+      } else {
+        return temp
       }
-      return temp
     },
+    Positif() {
+      let temp = []
+      let total = 0
+      if (this.getCovidstore.length) {
+        for (let i in this.getCovidstore) {
+          temp.push(this.getCovidstore[i]['attributes']['Kasus_Posi'])
+        }
+        for (let j = 0; j < temp.length; j++) {
+          total += temp[j]
+        }
+        return total
+      }
+    },
+    Meninggal() {
+      let temp = []
+      let total = 0
+      if (this.getCovidstore.length) {
+        for (let i in this.getCovidstore) {
+          temp.push(this.getCovidstore[i]['attributes']['Kasus_Meni'])
+        }
+        for (let j = 0; j < temp.length; j++) {
+          total += temp[j]
+        }
+        return total
+      }
+    },
+    Sembuh() {
+      let temp = []
+      let total = 0
+      if (this.getCovidstore.length) {
+        for (let i in this.getCovidstore) {
+          temp.push(this.getCovidstore[i]['attributes']['Kasus_Semb'])
+        }
+        for (let j = 0; j < temp.length; j++) {
+          total += temp[j]
+        }
+        return total
+      }
+    },
+    shapeChart() {
+      let temp = []
+      return temp = [this.Positif, this.Sembuh, this.Meninggal]
+    }
   },
 };
 </script>
