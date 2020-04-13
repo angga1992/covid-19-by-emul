@@ -5,7 +5,7 @@
         height="300"
         type="donut"
         :options="chartOptions"
-        :series="shapeChart"
+        :series="series"
     >
     </apexchart>
   </div>
@@ -67,7 +67,7 @@ export default {
         }
         return temp
       } else {
-        return temp
+        return temp = [this.Positif, this.Sembuh, this.Meninggal]
       }
     },
     Positif() {
