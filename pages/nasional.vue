@@ -33,7 +33,7 @@
               class="text-center">
             <td class="border px-4 py-2">{{datTable['attributes']['Provinsi']}}</td>
             <td class="border py-2">{{datTable['attributes']['Kasus_Posi']}}</td>
-            <td class="border py-2">{{datTable['attributes']['Kasus_Meni']}}</td>
+            <td class="border py-2">{{datTable['attributes']['Kasus_Semb']}}</td>
             <td class="border py-2">{{datTable['attributes']['Kasus_Meni']}}</td>
           </tr>
         </tbody>
