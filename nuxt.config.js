@@ -12,7 +12,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/pcovid.ico' }
     ]
   },
   /*
@@ -66,27 +66,27 @@ export default {
     // start_url: `${dir}/`,
     short_name: "pantau covid-19",
     icons: [{
-      src: `~/static/icon.png`,
+      src: `pcovid.png`,
       size: "144x144",
       type: "image/png"
     }, {
-      src: `~/static/pcovid.png`,
+      src: `pcovid.png`,
       size: "128x128",
       type: "image/png"
     }, {
-      src: `~/static/pcovid.png`,
+      src: `pcovid.png`,
       size: "152x152",
       type: "image/png"
     }, {
-      src: `~/static/pcovid.png`,
+      src: `pcovid.png`,
       size: "180x180",
       type: "image/png"
     }, {
-      src: `~/static/pcovid.png`,
+      src: `pcovid.png`,
       size: "192x192",
       type: "image/png"
     }, {
-      src: `~/static/pcovid.png`,
+      src: `pcovid.png`,
       size: "256x256",
       type: "image/png"
     }
