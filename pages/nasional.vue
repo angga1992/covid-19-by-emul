@@ -21,10 +21,10 @@
       <table class="table-auto mb-24 text-xs">
         <thead>
           <tr class="text-center">
-            <th class="py-2">Provinsi</th>
-            <th class="px-1 py-2">Positif</th>
-            <th class="px-1 py-2">Sembuh</th>
-            <th class="px-1 py-2">Meninggal</th>
+            <th class="py-2 sticky top-0 bg-gray-100">Provinsi</th>
+            <th class="px-1 py-2 sticky top-0 bg-gray-100">Positif</th>
+            <th class="px-1 py-2 sticky top-0 bg-gray-100">Sembuh</th>
+            <th class="px-1 py-2 sticky top-0 bg-gray-100">Meninggal</th>
           </tr>
         </thead>
         <tbody>
@@ -32,9 +32,9 @@
               :key="idx+'table'"
               class="text-center">
             <td class="border px-4 py-2">{{datTable['attributes']['Provinsi']}}</td>
-            <td class="border py-2">{{datTable['attributes']['Kasus_Posi']}}</td>
-            <td class="border py-2">{{datTable['attributes']['Kasus_Semb']}}</td>
-            <td class="border py-2">{{datTable['attributes']['Kasus_Meni']}}</td>
+            <td class="border py-2">{{datTable['attributes']['Kasus_Posi'] | formatNumber}}</td>
+            <td class="border py-2">{{datTable['attributes']['Kasus_Semb'] | formatNumber}}</td>
+            <td class="border py-2">{{datTable['attributes']['Kasus_Meni'] | formatNumber}}</td>
           </tr>
         </tbody>
       </table>
@@ -92,7 +92,7 @@ export default {
           value: items['attributes']['FID']
         }
       })
-    },
+    }
   }
 }
 </script>

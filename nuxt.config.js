@@ -30,6 +30,7 @@ export default {
   plugins: [
     { src: '@/plugins/apexchart.js', ssr: false },
     '~/plugins/dateFormatter',
+    { src: '~/plugins/formatnumber.js', ssr: false },
   ],
   /*
   ** Nuxt.js dev-modules
@@ -51,6 +52,46 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
+
+  manifest: {
+    name: "Pantau Covid-19",
+    lang: 'idn',
+    // 'display':'standalone',
+    title: 'Pantau Covid-19',
+    'og:title': 'Pantau Covid-19',
+    description: 'Pantau Covid-19 lite',
+    'og:description': 'test',
+    theme_color: '#007f00',
+    background_color: '#007f00',
+    // start_url: `${dir}/`,
+    short_name: "pantau covid-19",
+    icons: [{
+      src: `~/static/icon.png`,
+      size: "144x144",
+      type: "image/png"
+    }, {
+      src: `~/static/pcovid.png`,
+      size: "128x128",
+      type: "image/png"
+    }, {
+      src: `~/static/pcovid.png`,
+      size: "152x152",
+      type: "image/png"
+    }, {
+      src: `~/static/pcovid.png`,
+      size: "180x180",
+      type: "image/png"
+    }, {
+      src: `~/static/pcovid.png`,
+      size: "192x192",
+      type: "image/png"
+    }, {
+      src: `~/static/pcovid.png`,
+      size: "256x256",
+      type: "image/png"
+    }
+    ]
+  },
   axios: {
   },
   /*
@@ -60,7 +101,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }

@@ -59,11 +59,10 @@ export default {
   },
   watch: {
     data: function() {
-      this._chart.destroy();
+      this._chart.destroy()
       //this.renderChart(this.data, this.options);
-      this.datasets();
+      this.datasets()
     }
   }
-
-};
+}
 </script>
