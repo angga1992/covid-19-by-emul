@@ -16,9 +16,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/pcovid.ico' }
     ]
   },
-  router:{
-    base:`${dir}/`
-  },
   /*
   ** Customize the progress-bar color
   */
@@ -97,12 +94,6 @@ export default {
     ]
   },
   axios: {
-  },
-  pwa: {
-    workbox: {
-      /* workbox options */
-      autoRegister: true
-    }
   },
   /*
   ** Build configuration
