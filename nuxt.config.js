@@ -1,5 +1,3 @@
-
-const dir = "/dir/"
 export default {
   mode: 'universal',
   /*
@@ -64,34 +62,8 @@ export default {
     'og:description': 'test',
     theme_color: '#007f00',
     background_color: '#007f00',
-    start_url: `${dir}/`,
-    short_name: "pantau covid-19",
-    icons: [{
-      src: `${dir}/pcovid.png`,
-      size: "144x144",
-      type: "image/png"
-    }, {
-      src: `${dir}/pcovid.png`,
-      size: "128x128",
-      type: "image/png"
-    }, {
-      src: `${dir}/pcovid.png`,
-      size: "152x152",
-      type: "image/png"
-    }, {
-      src: `${dir}/pcovid.png`,
-      size: "180x180",
-      type: "image/png"
-    }, {
-      src: `${dir}/pcovid.png`,
-      size: "192x192",
-      type: "image/png"
-    }, {
-      src: `${dir}/pcovid.png`,
-      size: "256x256",
-      type: "image/png"
-    }
-    ]
+    // start_url: `${dir}/`,
+    short_name: "pantau covid-19"
   },
   axios: {
   },
