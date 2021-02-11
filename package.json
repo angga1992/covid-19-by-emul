@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "apexcharts": "^3.18.1",
+    "apexcharts": "^3.24.0",
     "chart.js": "^2.9.3",
     "nuxt": "^2.0.0",
     "nuxt-svg-loader": "^1.2.0",
